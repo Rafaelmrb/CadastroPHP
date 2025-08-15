@@ -15,7 +15,8 @@
              $senha = ($_POST["senha"]);
 
              $senha_hash = password_hash ($senha, PASSWORD_DEFAULT);
-             $sql = "INSERT INTO usuario (nome, email, senha) VALUES(?, ?, ?)";
+             $sql = "INSERT INTO usuario (nome, email, senha) VALUES (?, ?, ?)";
+
 
              $stmt = $acesso -> prepare($sql);
              $stmt -> bind_param("sss", $nome, $email, $senha_hash);
@@ -33,4 +34,5 @@
 ?>
 </body>
 </html>
+
 
